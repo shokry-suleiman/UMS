@@ -8,11 +8,12 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import {MatSelectModule} from '@angular/material/select';
+import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ConfirmModalComponent],
   imports: [
     CommonModule,
     MatInputModule,
@@ -32,7 +33,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatCardModule,
     MatTableModule,
-    MatSelectModule
+    MatSelectModule,
+    ConfirmModalComponent
   ]
 })
 export class SharedModule { }

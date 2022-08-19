@@ -5,6 +5,8 @@ import { UserService } from 'src/@resources/services/user/user.service';
 import { NgDialogAnimationService } from 'ng-dialog-animation';
 import { UserAddComponent } from '../user-add/user-add.component';
 import { UserEditComponent } from '../user-edit/user-edit.component';
+import { ConfirmModalComponent } from 'src/@shared/components/confirm-modal/confirm-modal.component';
+import { Global } from 'src/@core/global/global'
 
 @Component({
   selector: 'app-user-list',
@@ -12,10 +14,11 @@ import { UserEditComponent } from '../user-edit/user-edit.component';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'username', 'email', 'type', 'actions'];
+  displayedColumns: string[] = ['id', 'username',  'type', 'email', 'actions'];
   dataSource:User[] =[];
   USER_TYPE= USER_TYPE;
-  constructor(private userSerice:UserService, public dialog: NgDialogAnimationService) { }
+  constructor(private userSerice:UserService, public dialog: NgDialogAnimationService,
+              public global: Global) { }
 
   ngOnInit(): void {
     this.userSerice.getUsers().subscribe((res:any) =>{
@@ -56,6 +59,8 @@ export class UserListComponent implements OnInit {
   }
 
   editUser(index:number,user:User) {
+    if((!this.global.user.userType) && (user.id != this.global.user.id))
+      return;
     const dialogRef = this.dialog.open(UserEditComponent, {
 			width: '350px',
 			animation: {
@@ -88,7 +93,30 @@ export class UserListComponent implements OnInit {
 		});
   }
 
-  deleteUser(id:number){
+  deleteUser(index:number,userId:number){
+    if(!this.global.user.userType)
+      return;
+    const dialogRef = this.dialog.open(ConfirmModalComponent, {
+			width: '350px',
+			height: '180px',
+			panelClass: 'confirmation-dialog'
+		});
 
+		dialogRef.afterClosed().subscribe((result: any) => {
+			if (result) {
+        let users = [...this.dataSource];
+        this.dataSource = [];
+        this.userSerice.deleteUser(userId).subscribe((res:any) =>{
+            users.splice(index,1);
+            setTimeout(() => this.dataSource=[...users], 0);
+        }, err =>{
+          this.dataSource =[...users]
+        })
+				// event.row.isShown = false;
+				// event.row.id = event.row.id;
+				// this.deleteCategory(event.row, event.rowIndex);
+			}
+		});
   }
+
 }

@@ -1,3 +1,65 @@
+.container {
+  margin-left: calc(100vw / 30);
+  margin-right: calc(100vw / 30);
+}
+
+.wrapper{
+  padding-top: 50px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.title {
+  font-size: 2.01rem;
+  font-weight: 700;
+}
+
 table {
     width: 100%;
+}
+
+.add {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-size: 0.998rem;
+}
+
+th {
+  font-weight: 600;
+  color: black;
+  font-size: 0.891rem;
+}
+
+td {
+  font-weight: 400;
+  color: black;
+  font-size: 0.891rem;
+}
+
+.actions {
+  width: 150px;
+  &__edit{
+    max-width: 35px;
+    min-width: 35px;
+    width: 100%;
+    margin-right: 10px;
+    padding: 0px 0;
+    mat-icon {
+      font-size: 22px;
+    }
   }
+  &__delete{
+    max-width: 35px;
+    min-width: 35px;
+    width: 100%;
+    padding: 0px 0;
+    mat-icon {
+      font-size: 22px;
+    }
+  }
+}

@@ -4,7 +4,7 @@
       "id": 1,
       "username": "Danny",
       "email": "danythompson@gmail.com",
-      "password": "$2a$10$6baU.3IuzhlA.znJ3ZbdOuK7yXbdug6Wkhixi8n4MrQ0GH1y/dUnm",
+      "password": "$2a$10$HVMbLtiiaUUsaSXoxpFbs.jordxBZ99Yv0ZLDrvZZI21VDyVptw9e",
       "userType": 0
     },
     {
@@ -22,18 +22,18 @@
       "id": 3
     },
     {
-      "email": "michael@gmail.com",
-      "password": "$2a$10$3ptRT44xM8ZVXOJKYd0c2etRzD6dY67/aMFJaa5Q58dGOMRA1Lav6",
-      "username": "michael",
-      "userType": 0,
-      "id": 4
-    },
-    {
       "email": "moch@gmail.com",
       "password": "$2a$10$45rxSZhLOiuGDLdkPjkVy.n.Co38fM0i5QP7NjS.NrbXT1OT8g5p6",
       "username": "moch",
       "userType": 1,
       "id": 5
+    },
+    {
+      "id": 7,
+      "username": "sara",
+      "email": "sara@gmail.com",
+      "password": "$2a$10$9A9TLWfjRf578DiTLkHCb.jy7PL5Ju6.eXwVFY4u3UYkDGsWrm9cm",
+      "userType": 0
     }
   ]
 }

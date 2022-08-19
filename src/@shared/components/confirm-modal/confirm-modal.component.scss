@@ -1,0 +1,29 @@
+.confirm {
+    &__title {
+        color: dark;
+        font-weight: 600;
+        font-size: 1.675rem;
+        margin-bottom: 20px;
+    }
+    &__subtitle {
+        color: dark;
+        font-weight: 400;
+        font-size: 1.475rem;
+        margin-bottom: 20px;
+    }
+    &__actions {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        margin-top: 30px;
+    }
+    &__dismiss {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        margin-right: 10px;
+    }
+    &__ok {
+        padding-top: 2px;
+        padding-bottom: 2px;
+    }
+}

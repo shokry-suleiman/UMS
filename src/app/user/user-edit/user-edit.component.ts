@@ -26,7 +26,7 @@ export class UserEditComponent implements OnInit {
   hide:boolean = true;
   USER_TYPE = USER_TYPE;
   constructor(private fb: FormBuilder, private authService: AuthService,
-              private router: Router, private global: Global,
+              private router: Router, public global: Global,
               public dialogRef: MatDialogRef<UserAddComponent>, @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit(): void {
