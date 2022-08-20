@@ -3,14 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
-import {MatTableModule} from '@angular/material/table';
-import {MatSelectModule} from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.component';
-
-
 
 @NgModule({
   declarations: [ConfirmModalComponent],
@@ -23,9 +21,9 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
     MatIconModule,
     MatCardModule,
     MatTableModule,
-    MatSelectModule
+    MatSelectModule,
   ],
-  exports:[
+  exports: [
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
@@ -34,7 +32,7 @@ import { ConfirmModalComponent } from './components/confirm-modal/confirm-modal.
     MatCardModule,
     MatTableModule,
     MatSelectModule,
-    ConfirmModalComponent
-  ]
+    ConfirmModalComponent,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

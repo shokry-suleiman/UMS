@@ -3,7 +3,7 @@
   margin-right: calc(100vw / 30);
 }
 
-.wrapper{
+.wrapper {
   padding-top: 50px;
 }
 
@@ -20,7 +20,7 @@
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
 .add {
@@ -43,7 +43,7 @@ td {
 
 .actions {
   width: 150px;
-  &__edit{
+  &__edit {
     max-width: 35px;
     min-width: 35px;
     width: 100%;
@@ -53,7 +53,7 @@ td {
       font-size: 22px;
     }
   }
-  &__delete{
+  &__delete {
     max-width: 35px;
     min-width: 35px;
     width: 100%;

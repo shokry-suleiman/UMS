@@ -1,50 +1,76 @@
 <div class="title">User</div>
-    <form class="example-form" (ngSubmit)="addUser()" [formGroup]="userForm">
-        <mat-form-field class="w-100" appearance="fill">
-            <mat-label>Username</mat-label>
-            <input type="text" matInput formControlName="username" [errorStateMatcher]="matcher"
-                placeholder="Enter username" [readonly]="!global.user.userType">
-            <mat-error *ngIf="username?.hasError('required')">
-                Username is <strong>required</strong>
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field class="w-100" appearance="fill">
-            <mat-label>Email</mat-label>
-            <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
-                placeholder="Enter email">
-            <mat-error *ngIf="email?.hasError('email') && !email?.hasError('required')">
-                Please enter a valid email address
-            </mat-error>
-            <mat-error *ngIf="email?.hasError('required')">
-                Email is <strong>required</strong>
-            </mat-error>
-        </mat-form-field>
-        <mat-form-field class="w-100" appearance="fill">
-            <mat-label>password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" formControlName="password"
-                [errorStateMatcher]="matcher">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-error *ngIf="password?.hasError('required')">
-                Password is <strong>required</strong>
-            </mat-error>
-        </mat-form-field>
-       
-        <mat-form-field class="w-100" appearance="fill">
-            <mat-label>User type</mat-label>
-            <mat-select formControlName="userType" [errorStateMatcher]="matcher">
-                <mat-option *ngFor="let i of [0,1]" [value]="i">
-                  {{USER_TYPE[i]}}
-                </mat-option>
-              </mat-select>
-            <mat-error *ngIf="userType?.hasError('required')">
-                User type is <strong>required</strong>
-            </mat-error>
-        </mat-form-field>
-        
-        <button mat-flat-button color="accent"  class="button" type="submit" [disabled]="userForm.invalid">Update</button>
-    
-    
-    </form>
+<form [formGroup]="userForm" class="example-form" (ngSubmit)="addUser()">
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>Username</mat-label>
+    <input
+      type="text"
+      matInput
+      formControlName="username"
+      [errorStateMatcher]="matcher"
+      placeholder="Enter username"
+      [readonly]="!global?.user?.userType"
+    />
+    <mat-error *ngIf="username?.hasError('required')">
+      Username is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      type="email"
+      matInput
+      formControlName="email"
+      [errorStateMatcher]="matcher"
+      placeholder="Enter email"
+    />
+    <mat-error *ngIf="email?.hasError('email') && !email?.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="email?.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>password</mat-label>
+    <input
+      matInput
+      [type]="hide ? 'password' : 'text'"
+      formControlName="password"
+      [errorStateMatcher]="matcher"
+    />
+    <button
+      mat-icon-button
+      matSuffix
+      (click)="hide = !hide"
+      [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide"
+    >
+      <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+    </button>
+    <mat-error *ngIf="password?.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>User type</mat-label>
+    <mat-select formControlName="userType" [errorStateMatcher]="matcher">
+      <mat-option *ngFor="let i of [0, 1]" [value]="i">
+        {{ USER_TYPE[i] }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="userType?.hasError('required')">
+      User type is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    mat-flat-button
+    color="accent"
+    class="button"
+    type="submit"
+    [disabled]="userForm.invalid"
+  >
+    Update
+  </button>
+</form>

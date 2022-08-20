@@ -1,26 +1,25 @@
-.wrapper {   
-     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 100%;
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
 }
-.example-form {
-    min-width: 150px;
-    max-width: 400px;
-    width: 100%;
+.login-form {
+  min-width: 150px;
+  max-width: 400px;
+  width: 100%;
+}
 
-  }
-  
-  .example-full-width {
-    width: 100%;
-  }
-  
-  .title {
-    font-weight: 500;
-    font-size: 2.62rem;
-    margin-bottom: 40px;
-  }
-  .button {
-    padding: 4px 0;
-  }
+.w-100 {
+  width: 100%;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 2.62rem;
+  margin-bottom: 40px;
+}
+.button {
+  padding: 4px 0;
+}

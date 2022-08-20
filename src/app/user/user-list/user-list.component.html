@@ -2,41 +2,65 @@
   <div class="wrapper">
     <div class="header">
       <div class="title">Users</div>
-      <button mat-flat-button color="primary" class="add" type="button" (click)="addNewUser()" *ngIf="global?.user?.userType">
-        <mat-icon>add</mat-icon>  
+      <button
+        mat-flat-button
+        color="primary"
+        class="add"
+        type="button"
+        (click)="addNewUser()"
+        *ngIf="global?.user?.userType"
+      >
+        <mat-icon>add</mat-icon>
         Add user
       </button>
     </div>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-        <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef> Id </th>
-          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
-        </ng-container>
-      
-        <ng-container matColumnDef="username">
-          <th mat-header-cell *matHeaderCellDef> Username </th>
-          <td mat-cell *matCellDef="let element"> {{element.username}} </td>
-        </ng-container>
-      
-        <ng-container matColumnDef="email">
-          <th mat-header-cell *matHeaderCellDef> Email </th>
-          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
-        </ng-container>
-       <ng-container matColumnDef="type">
-        <th mat-header-cell *matHeaderCellDef> Type </th>
-        <td mat-cell *matCellDef="let element"> {{USER_TYPE[element.userType]}} </td>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
       </ng-container>
-        <ng-container matColumnDef="actions">
-          <th mat-header-cell *matHeaderCellDef class="actions"> Actions </th>
-          <td mat-cell *matCellDef="let element;let i = index;"> 
-              <button mat-flat-button color="accent" class="actions__edit" type="button" (click)="editUser(i,element)">  <mat-icon>visibility</mat-icon>  
-              </button>
-              <button mat-flat-button color="warn" class="actions__delete" type="button" (click)="deleteUser(i,element?.id)"><mat-icon>delete</mat-icon></button>
-           </td>
-        </ng-container>
-      
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
+
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef>Username</th>
+        <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
+      <ng-container matColumnDef="type">
+        <th mat-header-cell *matHeaderCellDef>Type</th>
+        <td mat-cell *matCellDef="let element">
+          {{ USER_TYPE[element.userType] }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="actions">Actions</th>
+        <td mat-cell *matCellDef="let element; let i = index">
+          <button
+            mat-flat-button
+            color="accent"
+            class="actions__edit"
+            type="button"
+            (click)="editUser(i, element)"
+          >
+            <mat-icon>visibility</mat-icon>
+          </button>
+          <button
+            mat-flat-button
+            color="warn"
+            class="actions__delete"
+            type="button"
+            (click)="deleteUser(i, element?.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
   </div>
 </div>

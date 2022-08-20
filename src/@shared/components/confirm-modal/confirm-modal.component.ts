@@ -4,21 +4,19 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 @Component({
   selector: 'app-confirm-modal',
   templateUrl: './confirm-modal.component.html',
-  styleUrls: ['./confirm-modal.component.scss']
+  styleUrls: ['./confirm-modal.component.scss'],
 })
-export class ConfirmModalComponent implements OnInit {
+export class ConfirmModalComponent {
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    public dialogRef: MatDialogRef<ConfirmModalComponent>
+  ) {}
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any,public dialogRef: MatDialogRef<ConfirmModalComponent>) { }
-
-  ngOnInit(): void {
-  }
-
-  _dismiss(){
-    this.dialogRef.close(false)
+  _dismiss() {
+    this.dialogRef.close(false);
   }
 
   confirm() {
     this.dialogRef.close(true);
   }
-
 }

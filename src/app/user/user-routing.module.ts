@@ -4,18 +4,22 @@ import { UserListComponent } from './user-list/user-list.component';
 import { UserComponent } from './user.component';
 
 const routes: Routes = [
-  { path:'', component: UserComponent, children: [
-    {
-      path: '',
-      redirectTo: '/users',
-      pathMatch: 'full',
-    },
-    { path:'users', component: UserListComponent}
-  ]}
+  {
+    path: '',
+    component: UserComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/users',
+        pathMatch: 'full',
+      },
+      { path: 'users', component: UserListComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class UserRoutingModule { }
+export class UserRoutingModule {}

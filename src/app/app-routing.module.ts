@@ -5,21 +5,18 @@ import { AuthenticationGuard } from 'src/@core/guards/authentication.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./user/user.module').then(
-        (m) => m.UserModule
-      ),
+    loadChildren: () => import('./user/user.module').then((m) => m.UserModule),
     canActivate: [AuthenticationGuard],
   },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
   },
-  {path: '**', redirectTo: '/users'}
+  { path: '**', redirectTo: '/users' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
